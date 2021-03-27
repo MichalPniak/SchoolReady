@@ -4,19 +4,26 @@ html
         link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap")
         link(rel="stylesheet", href="css/main.css")
     body 
-        .container
-            .wrapper 
-                .title
-                    | Uczniowie
-                .helper
-                    | Dodaj nowego ucznia.
-                div
-                    input(type="text", name="firnam", placeholder="Imię")
-                div
-                    input(type="text", name="lasnam", placeholder="Nazwisko")
-                div
-                    input(type="text", name="firnam", placeholder="Pesel", maxlength="11")
-                div
-                    input(type="date", name="lasnam", placeholder="")
-                div
-                    input(type="submit", value="Dodaj").btn
+        form(action="/users", method="POST")
+                .wrapper 
+                    .title
+                        | Uczniowie
+                    .helper
+                        | Dodaj nowego ucznia.
+                    div
+                        input(type="text", name="firnam", placeholder="Imię")
+                    div
+                        input(type="text", name="lasnam", placeholder="Nazwisko")
+                    div
+                        input(type="text", name="pesel_", placeholder="Pesel", maxlength="11")
+                    div
+                        input(type="date", name="ur_dat", placeholder="")
+                    div
+                        input(type="submit", value="Dodaj").btn 
+                    if (formMessageError.length)
+                        .error
+                            | #{formMessageError}
+                    else 
+                        .success
+                            | #{formMessage}
+        
