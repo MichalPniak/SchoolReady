@@ -42,3 +42,11 @@
     background: #1e90ff;
     color: #fff;
 }
+.wrapper .success{
+    font-size: .8rem;
+    color: forestgreen;
+}
+.wrapper .error{
+    font-size: .8rem;
+    color: red;
+}
